@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bridgely – transactional email infrastructure for development, demos, and production systems." />
+
+  <!-- Google Font: Inconsolata -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS via CDN (fine for a simple static page) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { mono: ["Inconsolata", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"] }
+        }
+      }
+    }
+  </script>
+
+  <title>Bridgely | Email Infrastructure</title>
+</head>
+<body class="font-mono bg-white">
+  <main class="max-w-3xl mx-auto p-8 space-y-8">
+    <header class="space-y-2">
+      <h1 class="text-3xl font-bold">Bridgely</h1>
+      <p>Infrastructure for transactional, system, and demo communications across our internal and client applications.</p>
+    </header>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Purpose</h2>
+      <p>This domain is used to send <strong>transactional</strong> and <strong>system-triggered</strong> emails from development, staging, demo, and production environments. Examples include sign‑in links, verification codes, password resets, and workflow notifications.</p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Mail Characteristics</h2>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Audience: verified users, stakeholders, and test recipients.</li>
+        <li>Types: one‑to‑one notifications; no bulk marketing.</li>
+        <li>Initiation: user action or system event only.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Compliance & Handling</h2>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Unsolicited mail is not sent.</li>
+        <li>Bounce and complaint feedback are monitored via Amazon SES.</li>
+        <li>Test/demonstration sends are limited and rate‑controlled.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Contact</h2>
+      <p>Email: <a class="underline" href="mailto:support@bridgely.site">support@bridgely.site</a></p>
+    </section>
+
+    <footer class="pt-6 border-t">
+      <p class="text-sm"><strong>Policy Notice:</strong> Bridgely does not send unsolicited email. Messages are transactional, system‑generated, or sent to verified users for legitimate communication and demonstration purposes.</p>
+      <p class="text-sm">© <span id="y"></span> Bridgely</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
